@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:uuid/uuid.dart';
-import '../features/tasks/data/tasks_provider.dart';
-import '../features/tasks/domain/task.dart';
+import '../features/tasks/presentation/widgets/new_task_sheet.dart';
 
 class ScaffoldWithNavBar extends ConsumerWidget {
   const ScaffoldWithNavBar({
@@ -17,6 +15,15 @@ class ScaffoldWithNavBar extends ConsumerWidget {
     navigationShell.goBranch(
       index,
       initialLocation: index == navigationShell.currentIndex,
+    );
+  }
+
+  void _showNewTaskSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (context) => const NewTaskSheet(),
     );
   }
 
@@ -51,20 +58,7 @@ class ScaffoldWithNavBar extends ConsumerWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Temporary: Add a dummy task
-          final newTask = Task(
-            id: const Uuid().v4(),
-            title: 'New Task ${DateTime.now().second}',
-            priority: TaskPriority.medium,
-            project: 'Inbox',
-          );
-          ref.read(tasksProvider.notifier).addTask(newTask);
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Task added')),
-          );
-        },
+        onPressed: () => _showNewTaskSheet(context),
         child: const Icon(Icons.add),
       ),
     );
