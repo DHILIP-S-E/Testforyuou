@@ -1,0 +1,1 @@
+## 2025-02-09 - Destructive Action Confirmation Pattern\n**Learning:** Implemented a reusable `DeleteConfirmationDialog` pattern in `users` module. Destructive actions must use a styled dialog with the "Cancel" button auto-focused to prevent accidental execution via keyboard.\n**Action:** Promote this pattern to a shared component library if used in other modules.
