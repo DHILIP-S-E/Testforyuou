@@ -22,6 +22,7 @@ const FullLayout: React.FC = () => {
         sx={{
           flexGrow: 1,
           width: { lg: `calc(100% - ${drawerWidth}px)` },
+          ml: { lg: `${drawerWidth}px` },
           padding: 3,
           backgroundColor: 'background.default',
         }}

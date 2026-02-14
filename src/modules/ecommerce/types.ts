@@ -10,3 +10,6 @@ export interface Product {
     count: number;
   };
 }
+
+export type CreateProductDTO = Omit<Product, 'id' | 'rating'>;
+export type UpdateProductDTO = Partial<CreateProductDTO>;
