@@ -14,6 +14,8 @@ import {
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ChatIcon from '@mui/icons-material/Chat';
+import ViewKanbanIcon from '@mui/icons-material/ViewKanban';
 
 const drawerWidth = 270;
 
@@ -49,6 +51,18 @@ const SidebarItems = [
     title: 'eCommerce',
     icon: ShoppingCartIcon,
     href: '/ecommerce/products',
+  },
+  {
+    id: '4',
+    title: 'Chat',
+    icon: ChatIcon,
+    href: '/apps/chat',
+  },
+  {
+    id: '5',
+    title: 'Kanban',
+    icon: ViewKanbanIcon,
+    href: '/apps/kanban',
   },
 ];
 
@@ -139,8 +153,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobileSidebarOpen, onSidebarClose, 
         anchor="left"
         open={isSidebarOpen}
         variant="permanent"
-        PaperProps={{
-          sx: {
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
             border: '0',
