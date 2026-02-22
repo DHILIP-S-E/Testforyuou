@@ -4,6 +4,7 @@ import BlankLayout from './layouts/BlankLayout';
 import userRoutes from './modules/users/routes';
 import dashboardRoutes from './modules/dashboard/routes';
 import ecommerceRoutes from './modules/ecommerce/routes';
+import chatRoutes from './modules/chat/routes';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       ...dashboardRoutes,
       ...userRoutes,
       ...ecommerceRoutes,
+      ...chatRoutes,
     ],
   },
   {
