@@ -14,6 +14,7 @@ import {
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ChatIcon from '@mui/icons-material/Chat';
 
 const drawerWidth = 270;
 
@@ -49,6 +50,12 @@ const SidebarItems = [
     title: 'eCommerce',
     icon: ShoppingCartIcon,
     href: '/ecommerce/products',
+  },
+  {
+    id: '4',
+    title: 'Chat',
+    icon: ChatIcon,
+    href: '/chat',
   },
 ];
 
